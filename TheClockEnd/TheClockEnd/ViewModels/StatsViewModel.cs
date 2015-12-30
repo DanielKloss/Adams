@@ -31,17 +31,6 @@ namespace TheClockEnd.ViewModels
             }
         }
 
-        private bool _hasBackButtonHardware;
-        public bool hasBackButtonHardware
-        {
-            get { return _hasBackButtonHardware; }
-            set
-            {
-                _hasBackButtonHardware = value;
-                onPropertyChanged(nameof(hasBackButtonHardware));
-            }
-        }
-
         private ObservableCollection<TrophyYear> _trophies;
         public ObservableCollection<TrophyYear> trophies
         {
@@ -75,20 +64,6 @@ namespace TheClockEnd.ViewModels
             }
         }
 
-        private ICommand _BackCommand;
-        public ICommand BackCommand
-        {
-            get
-            {
-                if (_BackCommand == null)
-                {
-                    _BackCommand = new Command(GoBack, CanGoBack);
-                }
-                return _BackCommand;
-            }
-            set { _BackCommand = value; }
-        }
-
         private ICommand _RefreshStatsCommand;
         public ICommand RefreshStatsCommand
         {
@@ -115,16 +90,6 @@ namespace TheClockEnd.ViewModels
             };
 
             ReadStats();
-        }
-
-        private bool CanGoBack()
-        {
-            return true;
-        }
-
-        private void GoBack()
-        {
-            ((App)Application.Current).rootFrame.GoBack();
         }
 
         private bool CanRefreshStats()

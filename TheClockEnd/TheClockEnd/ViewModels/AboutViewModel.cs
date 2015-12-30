@@ -1,41 +1,14 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Windows.Input;
 using TheClockEnd.Helpers;
 using Windows.ApplicationModel;
 using Windows.Foundation.Metadata;
 using Windows.System;
-using Windows.UI.Xaml;
 
 namespace TheClockEnd.ViewModels
 {
     public class AboutViewModel : BaseViewModel
     {
-        private bool _hasBackButtonHardware;
-        public bool hasBackButtonHardware
-        {
-            get { return _hasBackButtonHardware; }
-            set
-            {
-                _hasBackButtonHardware = value;
-                onPropertyChanged(nameof(hasBackButtonHardware));
-            }
-        }
-
-        private ICommand _BackCommand;
-        public ICommand BackCommand
-        {
-            get
-            {
-                if (_BackCommand == null)
-                {
-                    _BackCommand = new Command(GoBack, CanCommand);
-                }
-                return _BackCommand;
-            }
-            set { _BackCommand = value; }
-        }
-
         private ICommand _SendEmailCommand;
         public ICommand SendEmailCommand
         {
@@ -88,11 +61,6 @@ namespace TheClockEnd.ViewModels
             return true;
         }
 
-        private void GoBack()
-        {
-            ((App)Application.Current).rootFrame.GoBack();
-        }
-
         private async void SendEmail()
         {
             var mailto = new Uri("mailto:?to=theclockendapp@outlook.com&subject=The Clock End Windows Feedback");
@@ -109,17 +77,5 @@ namespace TheClockEnd.ViewModels
         {
 
         }
-
-        #region INPC
-        private void onPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        #endregion
     }
 }
