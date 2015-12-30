@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
+  <Identity Name="17883DanielKloss.TheClockEnd" Publisher="CN=3B8E0F1D-3F0A-4DA8-BE65-FBCEF577B52B" Version="2.0.5.0" />
+  <mp:PhoneIdentity PhoneProductId="e7af74f1-7bdb-48c9-86a8-bd47525b5648" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>The Clock End</DisplayName>
+    <PublisherDisplayName>Daniel Kloss</PublisherDisplayName>
+    <Logo>Assets\Logos\StoreLogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="TheClockEnd.App">
+      <uap:VisualElements DisplayName="The Clock End" Square150x150Logo="Assets\Logos\Square150x150Logo.png" Square44x44Logo="Assets\Logos\Square44x44Logo.png" Description="TheClockEnd" BackgroundColor="transparent">
+        <uap:LockScreen Notification="badgeAndTileText" BadgeLogo="Assets\Logos\BadgeLogo.png" />
+        <uap:DefaultTile Wide310x150Logo="Assets\Logos\Wide310x150Logo.png" Square71x71Logo="Assets\Logos\Square71x71Logo.png">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="wide310x150Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="Assets\Logos\SplashScreen.png" BackgroundColor="transparent" />
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="portrait" />
+          <uap:Rotation Preference="portraitFlipped" />
+        </uap:InitialRotationPreference>
+      </uap:VisualElements>
+      <Extensions>
+        <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.ClockBackgroundTask">
+          <BackgroundTasks>
+            <Task Type="timer" />
+          </BackgroundTasks>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>
