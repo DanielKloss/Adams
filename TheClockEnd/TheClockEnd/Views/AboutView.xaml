@@ -23,7 +23,7 @@
         <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignTopWithPanel="True">
             <StackPanel Margin="12">
                 <StackPanel Orientation="Horizontal" Margin="0,0,0,32">
-                    <Image Source="/Assets/Square150x150Logo.scale-200.png" Width="70" Margin="0,0,12,0"/>
+                    <Image Source="/Assets/Logos/Square150x150Logo.scale-200.png" Width="70" Margin="0,0,12,0"/>
                     <StackPanel>
                         <TextBlock x:Name="titleBlock" Text="The Clock End" Style="{StaticResource TitleTextStyle}"/>
                         <TextBlock Text="Version 2.0"/>

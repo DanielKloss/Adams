@@ -2,7 +2,6 @@
 using System.Windows.Input;
 using TheClockEnd.Helpers;
 using Windows.ApplicationModel;
-using Windows.Foundation.Metadata;
 using Windows.System;
 
 namespace TheClockEnd.ViewModels
