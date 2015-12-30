@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows.Input;
 using TheClockEnd.Helpers;
+using Windows.Foundation.Metadata;
 using Windows.UI.Xaml;
 
 namespace TheClockEnd.ViewModels
@@ -30,6 +31,11 @@ namespace TheClockEnd.ViewModels
                 return _BackCommand;
             }
             set { _BackCommand = value; }
+        }
+
+        public BaseViewModel()
+        {
+            hasBackButtonHardware = ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons");
         }
 
         private void GoBack()

@@ -2,9 +2,9 @@
 
 namespace TheClockEnd.Views
 {
-    public sealed partial class Clock : Page
+    public sealed partial class ClockView : Page
     {
-        public Clock()
+        public ClockView()
         {
             this.InitializeComponent();
         }

@@ -51,11 +51,6 @@ namespace TheClockEnd.ViewModels
             set { _DonateCommand = value; }
         }
 
-        public AboutViewModel()
-        {
-            hasBackButtonHardware = ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons");
-        }
-
         private bool CanCommand()
         {
             return true;

@@ -80,8 +80,6 @@ namespace TheClockEnd.ViewModels
 
         public StatsViewModel()
         {
-            hasBackButtonHardware = ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons");
-
             stats = new List<Stat>()
             {
                 new Stat(){name = "Trophies", url = "https://onedrive.live.com/download?resid=341DB5D34CE90A21!112&authkey=!AAuqRdhBlQ3Lbv4&ithint=file%2cxml"},

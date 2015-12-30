@@ -18,7 +18,6 @@ namespace TheClockEnd.Models
             set { _trophyUrls = value; }
         }
 
-
         public override bool Equals(object obj)
         {
             if (obj is TrophyYear)
