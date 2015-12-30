@@ -38,23 +38,17 @@ namespace TheClockEnd.ViewModels
         {
             menuItems = new ObservableCollection<MenuItem>()
             {
-                //new MenuItem()
-                //{
-                //    label = "Home",
-                //    symbol = Symbol.Clock,
-                //    destPage = typeof(MainPage)
-                //},
                 new MenuItem()
                 {
                     label = "Stats",
                     symbol = Symbol.FourBars,
-                    destPage = typeof(Stats)
+                    destPage = typeof(StatsView)
                 },
                 new MenuItem()
                 {
                     label = "About",
                     symbol = Symbol.Help,
-                    destPage = typeof(About)
+                    destPage = typeof(AboutView)
                 }
             };
 
@@ -75,15 +69,13 @@ namespace TheClockEnd.ViewModels
             set { _navigateCommand = value; }
         }
 
-        private bool CanNavigate(object argument)
+        private bool CanNavigate(MenuItem argument)
         {
             return true;
         }
 
-        public void Navigate(object arguemnt)
+        public void Navigate(MenuItem menuItem)
         {
-            MenuItem menuItem = arguemnt as MenuItem;
-
             if (((App)Application.Current).rootFrame.CurrentSourcePageType != menuItem.destPage)
             {
                 ((App)Application.Current).rootFrame.Navigate(menuItem.destPage);

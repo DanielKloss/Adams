@@ -2,9 +2,9 @@
 
 namespace TheClockEnd.Views
 {
-    public sealed partial class About : Page
+    public sealed partial class StatsView : Page
     {
-        public About()
+        public StatsView()
         {
             this.InitializeComponent();
         }

@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="TheClockEnd.Views.About"
+    x:Class="TheClockEnd.Views.AboutView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:theClockEnd="using:TheClockEnd.Views"
