@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Linq;
 using System.Windows.Input;
 using TheClockEnd.Helpers;
@@ -11,7 +10,7 @@ using Windows.UI.Xaml.Controls;
 
 namespace TheClockEnd.ViewModels
 {
-    public class NavigationViewModel : INotifyPropertyChanged
+    public class NavigationViewModel : BaseViewModel
     {
         private Type _currentPage;
         public Type currentPage
@@ -20,7 +19,7 @@ namespace TheClockEnd.ViewModels
             set
             {
                 _currentPage = value;
-                onPropertyChanged("currentPage");
+                onPropertyChanged(nameof(currentPage));
             }
         }
 
@@ -31,7 +30,7 @@ namespace TheClockEnd.ViewModels
             set
             {
                 _menuItems = value;
-                onPropertyChanged("menuItems");
+                onPropertyChanged(nameof(menuItems));
             }
         }
 
@@ -90,17 +89,5 @@ namespace TheClockEnd.ViewModels
                 ((App)Application.Current).rootFrame.Navigate(menuItem.destPage);
             }
         }
-
-        #region INPC
-        private void onPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        #endregion
     }
 }

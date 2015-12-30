@@ -1,10 +1,9 @@
 ﻿using System;
-using System.ComponentModel;
 using Windows.UI.Xaml;
 
 namespace TheClockEnd.ViewModels
 {
-    public class ClockViewModel : INotifyPropertyChanged
+    public class ClockViewModel : BaseViewModel
     {
         private DispatcherTimer timer;
 
@@ -15,7 +14,7 @@ namespace TheClockEnd.ViewModels
             set
             {
                 _theTime = value;
-                onPropertyChanged("theTime");
+                onPropertyChanged(nameof(theTime));
             }
         }
 
@@ -39,17 +38,5 @@ namespace TheClockEnd.ViewModels
         {
             theTime = DateTime.Now;
         }
-
-        #region INPC
-        private void onPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        #endregion
     }
 }

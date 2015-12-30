@@ -15,7 +15,7 @@ using Windows.UI.Xaml;
 
 namespace TheClockEnd.ViewModels
 {
-    public class StatsViewModel : INotifyPropertyChanged
+    public class StatsViewModel : BaseViewModel
     {
         private ICustomDataReader reader;
         private List<Stat> stats;
@@ -27,7 +27,7 @@ namespace TheClockEnd.ViewModels
             set
             {
                 _refreshing = value;
-                onPropertyChanged("refreshing");
+                onPropertyChanged(nameof(refreshing));
             }
         }
 
@@ -38,7 +38,7 @@ namespace TheClockEnd.ViewModels
             set
             {
                 _hasBackButtonHardware = value;
-                onPropertyChanged("hasBackButtonHardware");
+                onPropertyChanged(nameof(hasBackButtonHardware));
             }
         }
 
@@ -49,7 +49,7 @@ namespace TheClockEnd.ViewModels
             set
             {
                 _trophies = value;
-                onPropertyChanged("trophies");
+                onPropertyChanged(nameof(trophies));
             }
         }
 
@@ -60,7 +60,7 @@ namespace TheClockEnd.ViewModels
             set
             {
                 _appearances = value;
-                onPropertyChanged("appearances");
+                onPropertyChanged(nameof(appearances));
             }
         }
 
@@ -71,7 +71,7 @@ namespace TheClockEnd.ViewModels
             set
             {
                 _goals = value;
-                onPropertyChanged("goals");
+                onPropertyChanged(nameof(goals));
             }
         }
 
@@ -198,17 +198,5 @@ namespace TheClockEnd.ViewModels
                 return true;
             }
         }
-
-        #region INPC
-        private void onPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        #endregion
     }
 }

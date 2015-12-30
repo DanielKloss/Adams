@@ -9,7 +9,7 @@ using Windows.UI.Xaml;
 
 namespace TheClockEnd.ViewModels
 {
-    public class AboutViewModel : INotifyPropertyChanged
+    public class AboutViewModel : BaseViewModel
     {
         private bool _hasBackButtonHardware;
         public bool hasBackButtonHardware
@@ -18,7 +18,7 @@ namespace TheClockEnd.ViewModels
             set
             {
                 _hasBackButtonHardware = value;
-                onPropertyChanged("hasBackButtonHardware");
+                onPropertyChanged(nameof(hasBackButtonHardware));
             }
         }
 
