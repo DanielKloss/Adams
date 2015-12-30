@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
@@ -9,7 +8,6 @@ using System.Windows.Input;
 using TheClockEnd.Data;
 using TheClockEnd.Helpers;
 using TheClockEnd.Models;
-using Windows.Foundation.Metadata;
 using Windows.Storage;
 using Windows.UI.Xaml;
 

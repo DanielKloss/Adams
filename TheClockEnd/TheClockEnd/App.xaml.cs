@@ -126,7 +126,7 @@ namespace TheClockEnd
 
         private void BackButtonPressed(object sender, BackRequestedEventArgs e)
         {
-            var frame = ((App)Application.Current).rootFrame;
+            var frame = ((App)Current).rootFrame;
             if (frame.CanGoBack)
             {
                 frame.GoBack();
