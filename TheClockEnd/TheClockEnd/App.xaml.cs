@@ -1,17 +1,11 @@
 ﻿using BackgroundTasks;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Net;
 using System.Threading.Tasks;
-using TheClockEnd.Helpers;
-using TheClockEnd.Models;
 using TheClockEnd.Views;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.Background;
 using Windows.ApplicationModel.Core;
-using Windows.Storage;
 using Windows.UI.Core;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
@@ -146,17 +140,6 @@ namespace TheClockEnd
                 builder.SetTrigger(new TimeTrigger(240, false));
                 builder.Register();
             }
-        }
-
-        public async Task NoConnectionPopup()
-        {
-            CoreDispatcher coreDispatcher = CoreApplication.MainView.CoreWindow.Dispatcher;
-            var message = "No internet connection has been found. Please check your connection and try again.";
-            var title = "Connection Error";
-            var messageDialog = new MessageDialog(message);
-            messageDialog.Title = title;
-            messageDialog.Commands.Add(new UICommand("Ok"));
-            await messageDialog.ShowAsync();
         }
     }
 }

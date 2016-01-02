@@ -836,6 +836,7 @@
     <Compile Include="DesignData\ClockDesignData.cs" />
     <Compile Include="DesignData\TrophiesDesignData.cs" />
     <Compile Include="Helpers\Command.cs" />
+    <Compile Include="Helpers\Popups.cs" />
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\Clock.cs" />
     <Compile Include="Models\MenuItem.cs" />
