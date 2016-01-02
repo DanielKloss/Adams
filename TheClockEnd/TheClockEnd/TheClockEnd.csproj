@@ -829,9 +829,9 @@
     <Compile Include="Converters\BigHandConverter.cs" />
     <Compile Include="Converters\SmallHandConverter.cs" />
     <Compile Include="Converters\VisibilityConverter.cs" />
-    <Compile Include="Data\DataReaderFactory.cs" />
-    <Compile Include="Data\DataType.cs" />
+    <Compile Include="Data\XmlDataReaderFactory.cs" />
     <Compile Include="Data\ICustomDataReader.cs" />
+    <Compile Include="Data\IDataReaderFactory.cs" />
     <Compile Include="Data\XmlDataReader.cs" />
     <Compile Include="DesignData\ClockDesignData.cs" />
     <Compile Include="DesignData\TrophiesDesignData.cs" />
@@ -839,6 +839,7 @@
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\Clock.cs" />
     <Compile Include="Models\MenuItem.cs" />
+    <Compile Include="Models\Stat.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\NavigationViewModel.cs" />
@@ -852,7 +853,6 @@
       <DependentUpon>ClockView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Player.cs" />
-    <Compile Include="Models\Stat.cs" />
     <Compile Include="Models\TrophyYear.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\ClockViewModel.cs" />
@@ -1612,6 +1612,9 @@
     <Content Include="Assets\Wide\9\8.png" />
     <Content Include="Assets\Wide\9\9.png" />
     <None Include="Package.StoreAssociation.xml" />
+    <Content Include="Data\Appearances.xml" />
+    <Content Include="Data\Goals.xml" />
+    <Content Include="Data\Trophies.xml" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\Logos\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\Logos\SplashScreen.scale-200.png" />

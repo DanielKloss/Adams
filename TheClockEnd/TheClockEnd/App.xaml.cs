@@ -47,14 +47,8 @@ namespace TheClockEnd
         /// will be used such as when the application is launched to open a specific file.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
-        protected override async void OnLaunched(LaunchActivatedEventArgs e)
+        protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
-            if (ApplicationData.Current.LocalSettings.Values["FirstTime"] == null || (bool)ApplicationData.Current.LocalSettings.Values["FirstTime"])
-            {
-                await FirstTimeSetup();
-                ApplicationData.Current.LocalSettings.Values["FirstTime"] = false;
-            }
-
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
             {
@@ -151,62 +145,6 @@ namespace TheClockEnd
                 builder.TaskEntryPoint = TASKENTRYPOINT;
                 builder.SetTrigger(new TimeTrigger(240, false));
                 builder.Register();
-            }
-        }
-
-        private async Task FirstTimeSetup()
-        {
-            bool errors = false;
-
-            List<Stat> stats = new List<Stat>()
-            {
-                new Stat(){name = "Trophies", url = "https://onedrive.live.com/download?resid=341DB5D34CE90A21!112&authkey=!AAuqRdhBlQ3Lbv4&ithint=file%2cxml"},
-                new Stat(){name = "Appearances", url = "https://onedrive.live.com/download?resid=341DB5D34CE90A21!110&authkey=!AJVhFM8EXjnHeds&ithint=file%2cxml"},
-                new Stat(){name = "Goals", url = "https://onedrive.live.com/download?resid=341DB5D34CE90A21!109&authkey=!AFkH9wIbn3eORwY&ithint=file%2cxml"}
-            };
-
-
-            foreach (Stat stat in stats)
-            {
-                string fileName = stat.name + ".xml";
-
-                //Check if dependant files exist
-                if (await ApplicationData.Current.LocalFolder.TryGetItemAsync(fileName) == null)
-                {
-                    //If they dont, create them
-                    await ApplicationData.Current.LocalFolder.CreateFileAsync(fileName);
-                    //Write the file
-                    StorageFile _file = await ApplicationData.Current.LocalFolder.GetFileAsync(fileName);
-                    await FileIO.WriteTextAsync(_file, "<?xml version='1.0' encoding='utf-8' ?><" + stat.name + "></" + stat.name + ">");
-                }
-
-                errors = await RefreshStat(stat);
-                if (errors)
-                {
-                    await NoConnectionPopup();
-                    break;
-                }
-            }
-        }
-
-        private async Task<bool> RefreshStat(Stat stat)
-        {
-            try
-            {
-                //Download the file
-                WebResponse resp = await WebRequest.Create(stat.url).GetResponseAsync();
-                StreamReader sr = new StreamReader(resp.GetResponseStream());
-                string source = sr.ReadToEnd();
-
-                //Write the file
-                StorageFile _file = await ApplicationData.Current.LocalFolder.GetFileAsync(stat.name + ".xml");
-                await FileIO.WriteTextAsync(_file, source);
-
-                return false;
-            }
-            catch (Exception)
-            {
-                return true;
             }
         }
 

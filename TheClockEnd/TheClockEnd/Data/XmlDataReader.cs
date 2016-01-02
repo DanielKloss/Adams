@@ -12,27 +12,18 @@ namespace TheClockEnd.Data
 {
     public class XmlDataReader : ICustomDataReader
     {
-        private string _xmlLocation;
         public XDocument xmlFile;
 
-        public XmlDataReader(string xmlLocation)
+        public async Task LoadFile(Uri xmlLocation)
         {
-            _xmlLocation = xmlLocation;
-        }
-
-        public async Task LoadFile(string xmlLocation)
-        {
-            StorageFile MyFile = await ApplicationData.Current.LocalFolder.GetFileAsync(xmlLocation);
+            StorageFile MyFile = await StorageFile.GetFileFromApplicationUriAsync(xmlLocation);
             var stream = await MyFile.OpenStreamForReadAsync();
             xmlFile = XDocument.Load(stream);
         }
 
         public async Task<ObservableCollection<TrophyYear>> GetAllTrophyYears()
         {
-            if (xmlFile == null)
-            {
-                await LoadFile(_xmlLocation);
-            }
+            await LoadFile(new Uri("ms-appx:///Data/Trophies.xml"));
 
             ObservableCollection<TrophyYear> yearsToReturn = new ObservableCollection<TrophyYear>();
 
@@ -62,13 +53,9 @@ namespace TheClockEnd.Data
             return yearsToReturn;
         }
 
-
         public async Task<ObservableCollection<Player>> GetAllAppearances()
         {
-            if (xmlFile == null)
-            {
-                await LoadFile(_xmlLocation);
-            }
+            await LoadFile(new Uri("ms-appx:///Data/Appearances.xml"));
 
             ObservableCollection<Player> appearancessToReturn = new ObservableCollection<Player>();
 
@@ -95,13 +82,9 @@ namespace TheClockEnd.Data
             return appearancessToReturn;
         }
 
-
         public async Task<ObservableCollection<Player>> GetAllGoals()
         {
-            if (xmlFile == null)
-            {
-                await LoadFile(_xmlLocation);
-            }
+            await LoadFile(new Uri("ms-appx:///Data/Goals.xml"));
 
             ObservableCollection<Player> goalsToReturn = new ObservableCollection<Player>();
 

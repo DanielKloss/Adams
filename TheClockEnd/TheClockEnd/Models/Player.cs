@@ -1,6 +1,6 @@
 ﻿namespace TheClockEnd.Models
 {
-    public class Player
+    public class Player : Stat
     {
         private string _name;
         public string name

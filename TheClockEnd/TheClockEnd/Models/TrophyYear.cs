@@ -2,7 +2,7 @@
 
 namespace TheClockEnd.Models
 {
-    public class TrophyYear
+    public class TrophyYear : Stat
     {
         private string _year;
         public string year
@@ -26,6 +26,11 @@ namespace TheClockEnd.Models
                 return Equals(other.trophyUrls, trophyUrls) && Equals(other.year, year);
             }
             return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }
