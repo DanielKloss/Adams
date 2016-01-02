@@ -96,7 +96,6 @@
 
             <StackPanel x:Name="buttons" Margin="0,24,0,0" RelativePanel.AlignLeftWithPanel="True">
                 <AppBarButton Icon="Back" Visibility="{Binding hasBackButtonHardware, Converter={StaticResource visibilityConverter}}" Command="{Binding BackCommand}"/>
-                <AppBarButton Icon="Refresh" Command="{Binding RefreshStatsCommand}"/>
             </StackPanel>
         </RelativePanel>
 
