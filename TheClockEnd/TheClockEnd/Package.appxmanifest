@@ -15,7 +15,7 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="TheClockEnd.App">
-      <uap:VisualElements DisplayName="The Clock End" Square150x150Logo="Assets\Logos\Square150x150Logo.png" Square44x44Logo="Assets\Logos\Square44x44Logo.png" Description="TheClockEnd" BackgroundColor="transparent">
+      <uap:VisualElements DisplayName="The Clock End" Square150x150Logo="Assets\Logos\Square150x150Logo.png" Square44x44Logo="Assets\Logos\Square44x44Logo.png" Description="Arsenal Fans! Pin the famous old Highbury clock to your start screen or open the app to get a full screen display!" BackgroundColor="transparent">
         <uap:LockScreen Notification="badgeAndTileText" BadgeLogo="Assets\Logos\BadgeLogo.png" />
         <uap:DefaultTile Wide310x150Logo="Assets\Logos\Wide310x150Logo.png" Square71x71Logo="Assets\Logos\Square71x71Logo.png">
           <uap:ShowNameOnTiles>
@@ -37,7 +37,4 @@
       </Extensions>
     </Application>
   </Applications>
-  <Capabilities>
-    <Capability Name="internetClient" />
-  </Capabilities>
 </Package>
