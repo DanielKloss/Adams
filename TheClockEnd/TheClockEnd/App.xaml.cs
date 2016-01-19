@@ -6,6 +6,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.Background;
 using Windows.ApplicationModel.Core;
+using Windows.ApplicationModel.Store;
 using Windows.UI.Core;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
@@ -20,6 +21,7 @@ namespace TheClockEnd
     sealed partial class App : Application
     {
         public Frame rootFrame;
+        public LicenseInformation licenseInfo;
         private const string TASKNAME = "ClockBackgroundTask";
         private const string TASKENTRYPOINT = "BackgroundTasks.ClockBackgroundTask";
 
@@ -29,9 +31,10 @@ namespace TheClockEnd
         /// </summary>
         public App()
         {
-            Microsoft.ApplicationInsights.WindowsAppInitializer.InitializeAsync(
-                Microsoft.ApplicationInsights.WindowsCollectors.Metadata |
-                Microsoft.ApplicationInsights.WindowsCollectors.Session);
+            Microsoft.ApplicationInsights.WindowsAppInitializer.InitializeAsync(Microsoft.ApplicationInsights.WindowsCollectors.Metadata | Microsoft.ApplicationInsights.WindowsCollectors.Session);
+
+            licenseInfo = CurrentAppSimulator.LicenseInformation;
+
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }

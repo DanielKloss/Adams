@@ -14,9 +14,10 @@
     <Page.DataContext>
         <viewModels:AboutViewModel/>
     </Page.DataContext>
-    
+
     <Page.Resources>
         <converters:VisibilityConverter x:Key="visibilityConverter" />
+        <converters:InverseVisibilityConverter x:Key="inverseVisibilityConverter" />
     </Page.Resources>
 
     <RelativePanel>
@@ -35,12 +36,31 @@
                            TextAlignment="Center" Margin="0,0,0,20" Style="{StaticResource TextStyle}"/>
                 <Button x:Name="rateButton" Content="Rate and Review" Command="{Binding RateAndReviewCommand}" Margin="0,0,0,20" HorizontalAlignment="Center" Style="{StaticResource ButtonStyle}"/>
                 <Button x:Name="feedbackButton" Content="Email Feedback" Command="{Binding SendEmailCommand}" Margin="0,0,0,20" HorizontalAlignment="Center" Style="{StaticResource ButtonStyle}"/>
+
+                <TextBlock x:Name="textBlock3" Text="This app is free and done entirely in my own time. If you'd like to support my work please consider buying me a pre match beer, pie or programme." TextAlignment="Center" Margin="0,0,0,20" Style="{StaticResource TextStyle}"/>
+                
+                <Button x:Name="DonateBeerButton" Content="Buy Dev a Beer" Command="{Binding DonateCommand}" CommandParameter="PreMatchBeer" Margin="0,0,0,20" HorizontalAlignment="Center" Style="{StaticResource ButtonStyle}"
+                        Visibility="{Binding donatedBeer, Converter={StaticResource visibilityConverter}}"/>
+                <TextBlock x:Name="textBlock4" Text="Thank you very much for donating! I am glad you are enjoying the app and appreciate the Beer!" TextAlignment="Center" Margin="0,0,0,20" Style="{StaticResource TextStyle}"
+                           Visibility="{Binding donatedBeer, Converter={StaticResource inverseVisibilityConverter}}"/>
+
+                <Button x:Name="DonatePieButton" Content="Buy Dev a Pie" Command="{Binding DonateCommand}" CommandParameter="PreMatchPie" Margin="0,0,0,20" HorizontalAlignment="Center" Style="{StaticResource ButtonStyle}"/>
+                <TextBlock x:Name="textBlock5" Text="Thank you very much for donating! I am glad you are enjoying the app and appreciate the Pie!" TextAlignment="Center" Margin="0,0,0,20" Style="{StaticResource TextStyle}"
+                           Visibility="{Binding donatedPie, Converter={StaticResource inverseVisibilityConverter}}"/>
+
+                <Button x:Name="DonateProgrammeButton" Content="Buy Dev a Programme" Command="{Binding DonateCommand}" CommandParameter="PreMatchProgramme" Margin="0,0,0,20" HorizontalAlignment="Center" Style="{StaticResource ButtonStyle}"/>
+                <TextBlock x:Name="textBlock6" Text="Thank you very much for donating! I am glad you are enjoying the app and appreciate the Programme!" TextAlignment="Center" Margin="0,0,0,20" Style="{StaticResource TextStyle}"
+                           Visibility="{Binding donatedProgramme, Converter={StaticResource inverseVisibilityConverter}}"/>
+
                 <Button x:Name="backButton" Content="Back" Margin="0,20,0,20" HorizontalAlignment="Center" Style="{StaticResource ButtonStyle}"
                         Visibility="{Binding hasBackButtonHardware, Converter={StaticResource visibilityConverter}}" Command="{Binding BackCommand}"/>
-                <!--<TextBlock Text="This app is free and done entirely in my own time. If you'd like to support my work please consider a small donation." Style="{StaticResource InverseTextStyle}" TextAlignment="Center" Margin="0,10,0,0"/>
-                <Button Content="Donate" Command="{Binding DonateCommand}" HorizontalAlignment="Stretch"/>-->
             </StackPanel>
         </ScrollViewer>
+
+        <Grid Visibility="{Binding working, Converter={StaticResource inverseVisibilityConverter}}" Background="#BF000000"
+              RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignTopWithPanel="True">
+            <ProgressRing IsActive="{Binding working}" Height="50" Width="50"/>
+        </Grid>
 
         <!-- Responsive VisualStates -->
         <VisualStateManager.VisualStateGroups>
@@ -70,9 +90,16 @@
                         <Setter Target="titleBlock.FontSize" Value="24"/>
                         <Setter Target="textBlock1.FontSize" Value="16"/>
                         <Setter Target="textBlock2.FontSize" Value="16"/>
+                        <Setter Target="textBlock3.FontSize" Value="16"/>
+                        <Setter Target="textBlock4.FontSize" Value="16"/>
+                        <Setter Target="textBlock5.FontSize" Value="16"/>
+                        <Setter Target="textBlock6.FontSize" Value="16"/>
                         <Setter Target="rateButton.FontSize" Value="16"/>
                         <Setter Target="feedbackButton.FontSize" Value="16"/>
                         <Setter Target="backButton.FontSize" Value="16"/>
+                        <Setter Target="DonateBeerButton.FontSize" Value="16"/>
+                        <Setter Target="DonatePieButton.FontSize" Value="16"/>
+                        <Setter Target="DonateProgrammeButton.FontSize" Value="16"/>
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>

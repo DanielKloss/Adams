@@ -4,7 +4,7 @@ using Windows.UI.Xaml.Data;
 
 namespace TheClockEnd.Converters
 {
-    public class VisibilityConverter : IValueConverter
+    class InverseVisibilityConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
@@ -12,11 +12,11 @@ namespace TheClockEnd.Converters
 
             if (result)
             {
-                return Visibility.Collapsed;
+                return Visibility.Visible;
             }
             else
             {
-                return Visibility.Visible;
+                return Visibility.Collapsed;
             }
         }
 
