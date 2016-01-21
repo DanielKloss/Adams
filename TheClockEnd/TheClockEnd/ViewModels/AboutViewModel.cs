@@ -183,14 +183,14 @@ namespace TheClockEnd.ViewModels
             }
             else
             {
-                dialog = new MessageDialog("You dont have an internet connection, please try again", "No Internet");
+                dialog = new MessageDialog("The Windows Store couldn't be reached, please check your internet connection and try again", "Connection Error");
                 await dialog.ShowAsync();
             }
         }
 
         private async Task PurchaseError()
         {
-            dialog = new MessageDialog("Something went wrong with your donation, please try again", "Error");
+            dialog = new MessageDialog("Something went wrong with your donation, please check your internet connection and try again", "Error");
             await dialog.ShowAsync();
         }
 
