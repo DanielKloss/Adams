@@ -32,19 +32,19 @@
                 </StackPanel>
                 <TextBlock x:Name="textBlock1" Text="Pin the famous old Arsenal Highbury Clock to your start screen!" 
                            TextAlignment="Center" Margin="0,0,0,20" Style="{StaticResource TextStyle}"/>
-                <TextBlock x:Name="textBlock2" Text="Hello, I'm Dan - I hope you find this app useful and enjoyable. Please let me know what you think, or suggest future improvements, by clicking the buttons below."
+                <TextBlock x:Name="textBlock2" Text="Thank you for downloading my app, I hope you find it useful and enjoyable. Please let me know what you think, or suggest future improvements, by clicking the buttons below."
                            TextAlignment="Center" Margin="0,0,0,20" Style="{StaticResource TextStyle}"/>
                 <Button x:Name="rateButton" Content="Rate and Review" Command="{Binding RateAndReviewCommand}" Margin="0,0,0,20" HorizontalAlignment="Center" Style="{StaticResource ButtonStyle}"/>
                 <Button x:Name="feedbackButton" Content="Email Feedback" Command="{Binding SendEmailCommand}" Margin="0,0,0,20" HorizontalAlignment="Center" Style="{StaticResource ButtonStyle}"/>
 
                 <TextBlock x:Name="textBlock3" Text="This app is free and developed entirely in my own time. If you'd like to support further improvements to this and other apps please consider buying me a pre match beer, pie or programme." TextAlignment="Center" Margin="0,0,0,20" Style="{StaticResource TextStyle}"/>
                 
-                <Button x:Name="DonateBeerButton" Content="Buy Dan a Beer" Command="{Binding DonateCommand}" CommandParameter="PreMatchBeer" Margin="0,0,0,20" HorizontalAlignment="Center" Style="{StaticResource ButtonStyle}"
+                <Button x:Name="DonateBeerButton" Content="Donate a Beer" Command="{Binding DonateCommand}" CommandParameter="PreMatchBeer" Margin="0,0,0,20" HorizontalAlignment="Center" Style="{StaticResource ButtonStyle}"
                         Visibility="{Binding donatedBeer, Converter={StaticResource visibilityConverter}}"/>
                 
-                <Button x:Name="DonatePieButton" Content="Buy Dan a Pie" Command="{Binding DonateCommand}" CommandParameter="PreMatchPie" Margin="0,0,0,20" HorizontalAlignment="Center" Style="{StaticResource ButtonStyle}"/>
+                <Button x:Name="DonatePieButton" Content="Donate a Pie" Command="{Binding DonateCommand}" CommandParameter="PreMatchPie" Margin="0,0,0,20" HorizontalAlignment="Center" Style="{StaticResource ButtonStyle}"/>
                 
-                <Button x:Name="DonateProgrammeButton" Content="Buy Dan a Programme" Command="{Binding DonateCommand}" CommandParameter="PreMatchProgramme" Margin="0,0,0,20" HorizontalAlignment="Center" Style="{StaticResource ButtonStyle}"/>
+                <Button x:Name="DonateProgrammeButton" Content="Donate a Programme" Command="{Binding DonateCommand}" CommandParameter="PreMatchProgramme" Margin="0,0,0,20" HorizontalAlignment="Center" Style="{StaticResource ButtonStyle}"/>
 
                 <TextBlock x:Name="textBlock4" Text="Thank you very much for donating! I am glad you are enjoying the app and I appreciate the Beer!" TextAlignment="Center" Margin="0,0,0,20" Style="{StaticResource TextStyle}"
                            Visibility="{Binding donatedBeer, Converter={StaticResource inverseVisibilityConverter}}"/>

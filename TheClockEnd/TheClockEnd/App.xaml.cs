@@ -1,5 +1,7 @@
 ﻿using BackgroundTasks;
+using Microsoft.ApplicationInsights;
 using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using TheClockEnd.Views;
 using Windows.ApplicationModel;
@@ -31,12 +33,12 @@ namespace TheClockEnd
         /// </summary>
         public App()
         {
-            Microsoft.ApplicationInsights.WindowsAppInitializer.InitializeAsync(Microsoft.ApplicationInsights.WindowsCollectors.Metadata | Microsoft.ApplicationInsights.WindowsCollectors.Session);
+            WindowsAppInitializer.InitializeAsync(WindowsCollectors.Metadata | WindowsCollectors.Session);
 
-            licenseInfo = CurrentAppSimulator.LicenseInformation;
+            licenseInfo = CurrentApp.LicenseInformation;
 
-            this.InitializeComponent();
-            this.Suspending += OnSuspending;
+            InitializeComponent();
+            Suspending += OnSuspending;
         }
 
         /// <summary>
@@ -47,9 +49,9 @@ namespace TheClockEnd
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
 #if DEBUG
-            if (System.Diagnostics.Debugger.IsAttached)
+            if (Debugger.IsAttached)
             {
-                this.DebugSettings.EnableFrameRateCounter = true;
+                DebugSettings.EnableFrameRateCounter = true;
             }
 #endif
 

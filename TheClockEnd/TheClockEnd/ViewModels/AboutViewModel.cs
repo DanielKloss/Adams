@@ -149,8 +149,8 @@ namespace TheClockEnd.ViewModels
         private async void Donate(string donation)
         {
             //For Testing Only
-            StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///DesignData/WindowsStoreProxy.xml"));
-            await CurrentAppSimulator.ReloadSimulatorAsync(file);
+            //StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///DesignData/WindowsStoreProxy.xml"));
+            //await CurrentAppSimulator.ReloadSimulatorAsync(file);
 
 
             ConnectionProfile connections = NetworkInformation.GetInternetConnectionProfile();
@@ -159,7 +159,7 @@ namespace TheClockEnd.ViewModels
                 try
                 {
                     working = true;
-                    await CurrentAppSimulator.RequestProductPurchaseAsync(donation);
+                    await CurrentApp.RequestProductPurchaseAsync(donation);
                 }
                 catch (ArgumentException)
                 {
