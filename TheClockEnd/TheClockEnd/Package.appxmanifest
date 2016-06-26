@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="17883DanielKloss.TheClockEnd" Publisher="CN=3B8E0F1D-3F0A-4DA8-BE65-FBCEF577B52B" Version="2.0.5.0" />
+  <Identity Name="17883DanielKloss.TheClockEnd" Publisher="CN=3B8E0F1D-3F0A-4DA8-BE65-FBCEF577B52B" Version="2.1.10.0" />
   <mp:PhoneIdentity PhoneProductId="e7af74f1-7bdb-48c9-86a8-bd47525b5648" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>The Clock End</DisplayName>

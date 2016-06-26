@@ -4,7 +4,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:theClockEnd="using:TheClockEnd.Views"
     xmlns:viewModels="using:TheClockEnd.ViewModels"
-    xmlns:converters="using:TheClockEnd.Converters"
     xmlns:userControls="using:TheClockEnd.Views.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -14,11 +13,6 @@
     <Page.DataContext>
         <viewModels:AboutViewModel/>
     </Page.DataContext>
-
-    <Page.Resources>
-        <converters:VisibilityConverter x:Key="visibilityConverter" />
-        <converters:InverseVisibilityConverter x:Key="inverseVisibilityConverter" />
-    </Page.Resources>
 
     <RelativePanel>
         <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignTopWithPanel="True">

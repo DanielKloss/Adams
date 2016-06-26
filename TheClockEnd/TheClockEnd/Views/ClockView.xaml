@@ -5,17 +5,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:theClockEnd="using:TheClockEnd"
     xmlns:viewModels="using:TheClockEnd.ViewModels"
-    xmlns:converters="using:TheClockEnd.Converters"
     xmlns:userControls="using:TheClockEnd.Views.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="Red">
-
-    <Page.Resources>
-        <converters:BigHandConverter x:Key="bigHandConverter"/>
-        <converters:SmallHandConverter x:Key="smallHandConverter"/>
-    </Page.Resources>
 
     <RelativePanel>
         <Grid x:Name="clock" RelativePanel.Above="commandBar" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignTopWithPanel="True">

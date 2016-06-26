@@ -2,15 +2,12 @@
 using Microsoft.ApplicationInsights;
 using System;
 using System.Diagnostics;
-using System.Threading.Tasks;
 using TheClockEnd.Views;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.Background;
-using Windows.ApplicationModel.Core;
 using Windows.ApplicationModel.Store;
 using Windows.UI.Core;
-using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;

@@ -371,11 +371,5 @@
     <MainPackageIdentityName>17883DanielKloss.TheMafiaCardGame</MainPackageIdentityName>
     <MainPackageIdentityName>17883DanielKloss.WhoToChoose</MainPackageIdentityName>
   </AccountPackageIdentityNames>
-  <PackageInfoList LandingUrl="https://dev.windows.com/dashboard/Application?appId=9NBLGGH31C27">
-    <PackageInfo>
-      <OsMinVersion>6.3.0.0</OsMinVersion>
-      <PackageArchitecture>neutral</PackageArchitecture>
-      <PackageMaxArchitectureVersion>1.1.0.7</PackageMaxArchitectureVersion>
-    </PackageInfo>
-  </PackageInfoList>
+  <PackageInfoList LandingUrl="https://dev.windows.com/dashboard/Application?appId=9NBLGGH31C27" />
 </StoreAssociation>
