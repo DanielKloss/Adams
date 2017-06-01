@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Goals>
+  <Goal>
+    <Name>Thierry Henry</Name>
+    <Goals>228</Goals>
+    <Number>1</Number>
+  </Goal>
+  <Goal>
+    <Name>Ian Wright</Name>
+    <Goals>185</Goals>
+    <Number>2</Number>
+  </Goal>
+  <Goal>
+    <Name>Cliff Bastin</Name>
+    <Goals>178</Goals>
+    <Number>3</Number>
+  </Goal>
+  <Goal>
+    <Name>John Radford</Name>
+    <Goals>149</Goals>
+    <Number>4</Number>
+  </Goal>
+  <Goal>
+    <Name>Ted Drake</Name>
+    <Goals>139</Goals>
+    <Number>5</Number>
+  </Goal>
+  <Goal>
+    <Name>Jimmy Brain</Name>
+    <Goals>139</Goals>
+    <Number>6</Number>
+  </Goal>
+  <Goal>
+    <Name>Doug Lishman</Name>
+    <Goals>137</Goals>
+    <Number>7</Number>
+  </Goal>
+  <Goal>
+    <Name>Robin van Persie</Name>
+    <Goals>132</Goals>
+    <Number>8</Number>
+  </Goal>
+  <Goal>
+    <Name>Joe Hulme</Name>
+    <Goals>125</Goals>
+    <Number>9</Number>
+  </Goal>
+  <Goal>
+    <Name>David Jack</Name>
+    <Goals>124</Goals>
+    <Number>10</Number>
+  </Goal>
+</Goals>
