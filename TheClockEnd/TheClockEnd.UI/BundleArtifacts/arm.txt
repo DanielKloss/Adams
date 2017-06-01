@@ -1,0 +1,3 @@
+MainPackage=D:\Dan\Documents\dev\Windows10\Adams\TheClockEnd\TheClockEnd.UI\bin\ARM\Release\TheClockEnd.UI_3.0.3.0_ARM.appx
+SymbolPackage=D:\Dan\Documents\dev\Windows10\Adams\TheClockEnd\TheClockEnd.UI\AppPackages\TheClockEnd.UI_3.0.3.0_Test\TheClockEnd.UI_3.0.3.0_ARM.appxsym
+ResourcePack=D:\Dan\Documents\dev\Windows10\Adams\TheClockEnd\TheClockEnd.UI\bin\ARM\Release\TheClockEnd.UI_3.0.3.0_scale-100.appx

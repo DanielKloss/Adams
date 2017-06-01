@@ -1,0 +1,2 @@
+MainPackage=D:\Dan\Documents\dev\Windows10\Adams\TheClockEnd\TheClockEnd.UI\bin\x64\Release\TheClockEnd.UI_3.0.3.0_x64.appx
+SymbolPackage=D:\Dan\Documents\dev\Windows10\Adams\TheClockEnd\TheClockEnd.UI\AppPackages\TheClockEnd.UI_3.0.3.0_Test\TheClockEnd.UI_3.0.3.0_x64.appxsym
